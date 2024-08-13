@@ -1,4 +1,6 @@
-﻿@{
+﻿@model NhaSachOnline
+@model BookDislayModel
+@{
   ViewData["Title"] = "Home Page";
 }
 
@@ -79,7 +81,7 @@
 </div> *@
 
 <div class="w-100 mt-4 mb-5 d-flex flex-wrap justify-content-center">
-  @for(int i = 1; i <= 8; i++)
+  @* @for(int i = 1; i <= 8; i++)
   {
     <div class="card mx-2 mb-4" style="width: 16rem;">
       <img src="https://m.media-amazon.com/images/I/91147XjTc1L._SL1500_.jpg" class="card-img-top" alt="doctor-who" />
@@ -89,5 +91,13 @@
         <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
       </div>
     </div>
-  }
+  } *@
+  
+  @* <select>
+    <option selected>Thể Loại</option>
+    @foreach (var genre in Model.Genres)
+    {
+      <option selected="@(genre.Id == Model.GereId)" value="@genre.Id">@genre.GereName</option>
+    }
+  </select> *@
 </div>

@@ -22,7 +22,12 @@ namespace NhaSachOnline.Repositories
         await (from sach in _dbContext.Books
                join theLoai in _dbContext.Genres
                on sach.GenreId equals theLoai.Id
-               where string.IsNullOrWhiteSpace(keySearch) || (sach != null && sach.BookName != null && sach.BookName.ToLower().StartsWith(keySearch.ToLower()))
+               where 
+               string.IsNullOrWhiteSpace(keySearch) 
+               || (sach != null && 
+               sach.BookName != null && 
+               sach.BookName.ToLower().
+               StartsWith(keySearch.ToLower()))
                select new Book
                {
                  Id = sach.Id,
